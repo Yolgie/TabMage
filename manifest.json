@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Yolgie's Tab Mage",
+  "version": "1.0.0",
+  "description": "Counts open tabs by primary domain and shows the totals in the toolbar popup.",
+  "permissions": ["tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Yolgie's Tab Mage",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{f2a35f32-2c41-4a5f-8d0d-5b1f1d8b7f2a}",
+      "strict_min_version": "109.0"
+    }
+  }
+}
