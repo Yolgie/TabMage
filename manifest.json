@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Primary Domain Counter",
+  "version": "1.0.0",
+  "description": "Counts open tabs by primary domain and shows the totals in the toolbar popup.",
+  "permissions": ["tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Domain Counter",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "primary-domain-counter@example.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}
