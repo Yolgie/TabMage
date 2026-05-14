@@ -24,12 +24,14 @@ google.com: 2
 
 ## How it works
 
-The extension uses the Firefox `tabs` permission to query open tabs. A background service worker extracts a countable domain from each tab URL, builds domain totals, and returns the sorted list to the popup when the toolbar icon is clicked.
+The extension uses the Firefox `tabs` permission to query open tabs. A Firefox-supported background script extracts a countable domain from each tab URL, builds domain totals, and returns the sorted list to the popup when the toolbar icon is clicked.
+
+Because Firefox does not support Manifest V3 `background.service_worker`, this add-on declares `background.scripts` in `manifest.json` so `background.js` is registered and can answer popup messages.
 
 ## Project structure
 
 ```text
-manifest.json       Extension metadata, permissions, toolbar action, and background worker config
+manifest.json       Extension metadata, permissions, toolbar action, and background script config
 background.js       Tab querying, domain extraction, counting, and popup message handling
 popup/popup.html    Popup markup
 popup/popup.js      Popup rendering logic
